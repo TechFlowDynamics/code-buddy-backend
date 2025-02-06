@@ -5,7 +5,7 @@ import customLogger from "../../app/middleware/logger.middleware";
 
 let isConnected: boolean = false;
 const dbConnectionUrl = `${config.MONGODB_CONNECTION_URL}/${config.DB_NAME}`;
-export async function connectToDatabase() {
+export async function connectToDatabase() { 
   try {
     if (isConnected) {
       console.log("Using existing MongoDB connection");

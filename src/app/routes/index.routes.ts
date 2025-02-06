@@ -10,6 +10,7 @@ import userRouter from "./user.routes";
 import uploadRouter from "./upload.routes";
 import questionRouter from "./question.routes";
 import roomRouter from "./room.routes";
+import codeRouter from "./code.routes";
 const router = express.Router();
 
 router.use("/auth", authRouter);
@@ -17,6 +18,7 @@ router.use("/user", userRouter);
 router.use("/upload", uploadRouter);
 router.use("/questions", questionRouter);
 router.use("/room", roomRouter);
+router.use("/code", codeRouter);
 
 router.get(
   "/hello-world",

@@ -9,7 +9,10 @@ export interface ICodeSnippet {
 export interface ITopicTag {
   name?: string;
 }
-
+export interface ITestCase {
+  input: string;
+  output: string;
+}
 export interface IQuestion extends Document {
   frontendQuestionId?: string;
   acRate?: number;
@@ -22,6 +25,8 @@ export interface IQuestion extends Document {
   titleSlug?: string;
   topicTags?: ITopicTag[];
   categoryTitle?: string;
+  testCases: ITestCase[];
+  sampleTestCases: ITestCase[];
 }
 
 export interface QuestoinFilterInterface {
