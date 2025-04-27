@@ -15,8 +15,9 @@ export const verifyToken = async (
 ) => {
   try {
     const token: string | undefined = req
-      .header("access-token")
-      ?.replace("Bearer", "");
+      .header("Authorization")
+      ?.replace("Bearer ", "");
+
     if (!token) {
       throw new CustomError(
         "Invalid token ",
@@ -24,6 +25,7 @@ export const verifyToken = async (
       );
     }
 
+   
     const data: UserIncomingDetails = decodeUserToken(token);
     req.userData = data;
     if (!req.userData) {
@@ -38,7 +40,8 @@ export const verifyToken = async (
   } catch (error) {
     const code = getErrorCode(error) as number;
     const message = getErrorMessage(error);
-    return responseHandler(res, null, code, message);
+ 
+    return responseHandler(res, null, 402, message);
   }
 };
 
@@ -68,7 +71,7 @@ export const verifiedToken = async (
 ) => {
   try {
     const token: string | undefined = req
-      .header("access-token")
+      .header("Authorization")
       ?.replace("Bearer", "");
     if (!token) {
       throw new CustomError(

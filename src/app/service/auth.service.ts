@@ -159,7 +159,7 @@ export const signupServiceTwo = async (
 export const loginService = async (body: LoginUserIncommingInterface) => {
   const data = await findUser({ email: body.email as string });
 
-  if (data.emailVerified) {
+  if (!data.emailVerified) {
     throw new CustomError(ResponseMessages.RES_MSG_USER_NOT_VERIFIED_EN, "400");
   }
   const isMatch = await compareHash(

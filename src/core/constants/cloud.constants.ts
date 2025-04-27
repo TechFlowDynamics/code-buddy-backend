@@ -218,4 +218,17 @@ export const ResponseMessages = Object.freeze({
   LOOP_DETECTED: "LOOP_DETECTED",
   NOT_EXTENDED: "NOT_EXTENDED",
   NETWORK_AUTHENTICATION_REQUIRED: "NETWORK_AUTHENTICATION_REQUIRED",
+
+  //room
+  RES_MSG_ROOM_CREATED_EN: "Room created successfully.",
+  RES_MSG_INVALID_ROOM_CODE_EN:
+    "Invalid room code. Must be a 6-character alphanumeric string.",
+  RES_MSG_ROOM_NOT_FOUND_EN: "Room not found.",
+  RES_MSG_ROOM_ALREADY_JOINED_EN: "User already in the room, reconnected.",
+  RES_MSG_ROOM_FULL_EN: "Room is full. Cannot join.",
+  RES_MSG_ROOM_NOT_STARTED_EN: "Room has not started yet.",
+  RES_MSG_ROOM_ENDED_EN: "Room has already ended.",
+  RES_MSG_NEW_USER_JOINED_EN: "New user joined successfully.",
+  RES_MSG_BAD_REQUEST_EN: "Invalid request. Missing or incorrect parameters.",
+  RES_MSG_ROOMS_FETCHED_EN: "Rooms fetched successfully.",
 });
